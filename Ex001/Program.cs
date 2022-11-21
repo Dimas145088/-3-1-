@@ -1,50 +1,88 @@
-﻿//Задача 2//
+﻿/*Задача 19
 
-/*
-Console.WriteLine("Введите натуральное число ");
-int x=Convert.ToInt32 ( Console.ReadLine());
-int y=Convert.ToInt32 ( Console.ReadLine());
-if (x > y) Console.WriteLine("то x максимальное число");
-if (y > x) Console.WriteLine("то y максимальное число");
+Console.Write("Введите число: ");
+string? number = Console.ReadLine();
 
-
-//задача 4//
-Console.WriteLine("Узнаем из 3рех чисел максимальное число ");
-int a= 2;
-int b= 3;
-int c= 7;
-
-int max = a;
-
-if (a > max) max = a;
-if (b > max ) max = b;
-if (c > max) max = c;
-Console.Write("max = ");
-Console.WriteLine(max);
-
-
-  //Задача 6//
-  Console.WriteLine("Введите число : ");
-  int a = Convert.ToInt32(Console.Read());
-  if (a % 2 == 0) Console.WriteLine("Четное");
-  else Console.WriteLine("Нечетное");
-  Console.ReadKey();
-
-//Задача 8//
- static void Main(string[] args)
-    {
-        Console.Write("Write number 1: ");
-        int n = int.(Console.ReadLine());
-        Console.Write("Write number 2: ");
-        int m = int.(Console.ReadLine());
-        for (int i = n; i <= m; i++)
-        {
-            if (i % 2 == 0) 
-            {
-                Console.Write(i + " ");
-            }
-        }
-        Console.ReadKey();
-    }
+void CheckingNumber(string number){
+  if (number[0]==number[4] || number[1]==number[3]){
+    Console.WriteLine($"Ваше число: {number} - палиндром.");
+  }
+  else Console.WriteLine($"Ваше число: {number} - НЕ палиндром.");
 }
+
+if (number!.Length == 5){
+  CheckingNumber(number);
+}
+else Console.WriteLine($"Введи правильное число");
 */
+
+
+
+
+
+
+
+/* Задача 21
+
+int x1 = Coordinate("x", "A");
+int y1 = Coordinate("y", "A");
+int z1 = Coordinate("z", "A");
+int x2 = Coordinate("x", "B");
+int y2 = Coordinate("y", "B");
+int z2 = Coordinate("z", "B");
+
+int Coordinate(string coorName, string pointName)
+{
+    Console.Write($"Введите координату {coorName} точки {pointName}: ");
+    return Convert.ToInt16(Console.ReadLine());
+}
+
+double Decision(double x1, double x2, 
+                double y1, double y2, 
+                double z1, double z2){
+  return Math.Sqrt(Math.Pow((x2-x1), 2) + 
+                   Math.Pow((y2-y1), 2) + 
+                   Math.Pow((z2-z1), 2));
+}
+
+double segmentLength =  Math.Round (Decision(x1, x2, y1, y2, z1, z2), 2 );
+
+Console.WriteLine($"Длина отрезка  {segmentLength}");
+*/
+
+
+
+
+
+
+
+
+/* Задача 23
+
+Console.Write("Введите число: ");
+int cube = Convert.ToInt32(Console.ReadLine());
+
+void Cube(int[] cube){
+  int counter = 0;
+  int length = cube.Length;
+  while (counter <  length){
+    cube[counter] = Convert.ToInt32(Math.Pow(counter, 3));
+    counter++;
+  }
+}
+
+void PrintArry(int[] coll){
+  int count = coll.Length;
+  int index = 0;
+  while(index < count){
+    Console.Write(coll[index]+ " ");
+    index++;
+  }
+} 
+
+int[] arry = new int[cube+1];
+Cube(arry);
+PrintArry(arry);
+*/
+ 
+
