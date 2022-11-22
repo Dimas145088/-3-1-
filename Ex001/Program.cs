@@ -123,4 +123,5 @@ string seriesNew = RemovingSpaces(seriesOfNumbers);
 int[] arrayOfNumbers =  ArrayOfNumbers(seriesNew);
 
 PrintArry(arrayOfNumbers);
+
 */
