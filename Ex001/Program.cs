@@ -115,3 +115,4 @@ void PrintArray(double[] numbers)
     Console.WriteLine();
 }
 */
+//так//
