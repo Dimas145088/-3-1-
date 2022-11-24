@@ -1,127 +1,117 @@
-﻿
-/*
-Задача 25
-Console.WriteLine($" Возведене числа A в натуральную степень B");
+﻿/*
+Задача 34
+Console.WriteLine("Введите размер массива");
+int size = Convert.ToInt32(Console.ReadLine());
+int[] numbers = new int[size];
+FillArrayRandomNumbers(numbers);
+Console.WriteLine("Вот наш массив: ");
+PrintArray(numbers);
+int count = 0;
 
-int Exponentiation(int numberA, int numberB){
-  int result = 1;
-  for(int i=1; i <= numberB; i++){
-    result = result * numberA;
-  }
-    // int result = Math.Pow(numberA, numberB);
-    return result;
-}
+for (int z = 0; z < numbers.Length; z++)
+if (numbers[z] % 2 == 0)
+count++;
 
-  Console.Write("Введите число A: ");
-  int numberA = Convert.ToInt32(Console.ReadLine());
-  Console.Write("Введите число B: ");
-  int numberB = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine($"всего {numbers.Length} чисел, {count} из них чётные");
 
-  int exponentiation = Exponentiation(numberA, numberB);
-  Console.WriteLine("Ответ: " + exponentiation);
-*/
-
-/* задача 27
-Console.WriteLine($" Выдаёт сумму цифр в числе");
-Console.Write("Введите число N: ");
-int numberN = Convert.ToInt32(Console.ReadLine());
-
-  int SumNumber(int numberN){
-    
-    int counter = Convert.ToString(numberN).Length;
-    int advance = 0;
-    int result = 0;
-
-    for (int i = 0; i < counter; i++){
-      advance = numberN - numberN % 10;
-      result = result + (numberN - advance);
-      numberN = numberN / 10;
-    }
-   return result;
-  }
-
-int sumNumber = SumNumber(numberN);
-Console.WriteLine("Сумма цифр в числе: " + sumNumber);
-*/
-
-/* Задача 29
-Console.WriteLine($" Ряд чисел преобразует в массив");
-Console.Write("Введите ряд чисел, разделенных запятой : ");
-string? seriesOfNumbers = Console.ReadLine();
-
-seriesOfNumbers = seriesOfNumbers + ",";    // дополнительня запятая для обозначения конца строки
-
-// функция удаления пробелов из строки 
-string RemovingSpaces (string series){
-  string seriesNew = "";
-  for (int i = 0; i < series.Length; i++)
-  {
-    if (series[i] != ' ') 
+void FillArrayRandomNumbers(int[] numbers)
+{
+    for(int i = 0; i < numbers.Length; i++)
     {
-      seriesNew += series[i];
+        numbers[i] = new Random().Next(100,1000);
     }
-  }
-  return seriesNew;
 }
-//  функция  проверки на правильность ввода 
-void СheckNumber2 (int  series){
+void PrintArray(int[] numbers)
+{
+    Console.Write("[ ");
+    for(int i = 0; i < numbers.Length; i++)
+    {
+        Console.Write(numbers[i] + " ");
+    }
+    Console.Write("]");
+    Console.WriteLine();
+}
+*/
 
-      if (series == '0'||series == '1'||series == '2'
-      ||series == '3'||series == '4'||series == '5'||series == '6'
-      ||series == '7'||series == '8'||series == '9'||series == ','
-      ||series == '-')
-      {
-      }
-        else {
-          Console.WriteLine($"Ошибка ввода  символа. Вводи цифры.");
 
-      }
+
+/*
+Задача 36
+Console.WriteLine("Введите размер массива");
+int size = Convert.ToInt32(Console.ReadLine());
+int[] numbers = new int[size];
+FillArrayRandomNumbers(numbers);
+Console.WriteLine("Вот наш массив: ");
+PrintArray(numbers);
+int sum = 0;
+
+for (int z = 0; z < numbers.Length; z+=2)
+    sum = sum + numbers[z];
+
+    Console.WriteLine($"всего {numbers.Length} чисел, сумма элементов на нечётных позициях = {sum}");
+
+void FillArrayRandomNumbers(int[] numbers)
+{
+    for(int i = 0; i < numbers.Length; i++)
+        {
+            numbers[i] = new Random().Next(1,10);
+        }
+}
+void PrintArray(int[] numbers)
+{
+    Console.Write("[ ");
+    for(int i = 0; i < numbers.Length; i++)
+        {
+            Console.Write(numbers[i] + " ");
+        }
+    Console.Write("]");
+    Console.WriteLine();
+}
+*/
+
+
+/*
+
+Задача 38
+Console.WriteLine("Введите размер массива");
+int size = Convert.ToInt32(Console.ReadLine());
+double[] numbers = new double[size];
+FillArrayRandomNumbers(numbers);
+Console.WriteLine("Вот наш массив: ");
+PrintArray(numbers);
+double min = Int32.MaxValue;
+double max = Int32.MinValue;
+
+for (int z = 0; z < numbers.Length; z++)
+{
+    if (numbers[z] > max)
+        {
+            max = numbers[z];
+        }
+    if (numbers[z] < min)
+        {
+            min = numbers[z];
+        }
 }
 
-// функция  создания и заполнения массива из строки
-int[] ArrayOfNumbers(string seriesNew){ 
+Console.WriteLine($"всего {numbers.Length} чисел. Максимальное значение = {max}, минимальное значение = {min}");
+Console.WriteLine($"Разница между максимальным и минимальным значением = {max - min}");
 
-  int[] arrayOfNumbers = new int[1];    // инициализация массива из 1 элемента
-
-  int j =0;
-
-  for (int i = 0; i < seriesNew.Length; i++){
-    string seriesNew1 = "";
-
-    while (seriesNew[i] != ',' && i < seriesNew.Length){
-      seriesNew1 += seriesNew[i];
-      СheckNumber2(seriesNew[i]);
-      i++;
-    }
-    arrayOfNumbers[j] = Convert.ToInt32(seriesNew1);    // заполняет массив значениями из строки
-    if (i < seriesNew.Length-1){
-      arrayOfNumbers = arrayOfNumbers.Concat(new int[] {0}).ToArray();    // добавляет новый нулевой элемент в конец массива
-    }
-    j++;
-  }
-  return arrayOfNumbers;
+void FillArrayRandomNumbers(double[] numbers)
+{
+    for(int i = 0; i < numbers.Length; i++)
+        {
+            numbers[i] = Convert.ToDouble(new Random().Next(100,1000)) / 100;
+        }
 }
-
-// функция  вывода массива на печать 
-void PrintArry(int[] coll){
-  int count = coll.Length;
-  int index = 0;
-  Console.Write("[");
-  while(index < count){
-    Console.Write(coll[index]);
-    index++;
-    if (index < count){
-      Console.Write(", ");
-    }
-  }
-  Console.Write("]");
-} 
-
-
-string seriesNew = RemovingSpaces(seriesOfNumbers);
-
-int[] arrayOfNumbers =  ArrayOfNumbers(seriesNew);
-
-PrintArry(arrayOfNumbers);
-
+void PrintArray(double[] numbers)
+{
+    Console.Write("[ ");
+    for(int i = 0; i < numbers.Length; i++)
+        {
+            Console.Write(numbers[i] + " ");
+        }
+    Console.Write("]");
+    Console.WriteLine();
+}
 */
